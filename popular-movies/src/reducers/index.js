@@ -1,7 +1,6 @@
-import { changeTheNumber } from "./incDec";
+import { combineReducers } from 'redux'
+import helloWorld from './helloworld'
 
-import { combineReducers } from "redux";
-
-export const rootReducer = combineReducers({
-    changeTheNumber
+export default combineReducers({
+    helloWorld
 })

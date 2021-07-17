@@ -1,27 +1,21 @@
-import './App.css';
-import {useSelector, useDispatch} from 'react-redux'
-import {incNumber, decNumber} from './actions/index'
+import React from 'react'
+import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux'
 
-function App() {
+import { requestHelloWorld } from './actions'
 
-  const myState = useSelector( (state) => state.changeTheNumber);
-  const dispatch = useDispatch()
+class App extends React.Component {
+  componentDidMount() {
+      this.props.requestHelloWorld();
+  }
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Popular Movies</h1>
-        <h3>Add and remove</h3>
-        <div className="quantity">
-          <a className="decrement"
-            onClick={ ()=> dispatch(decNumber())}><span> - </span></a>
-          <input type="text" className="quantity"  value = {myState}/>
-          <a  className="increment"
-            onClick={ () => dispatch(incNumber())} ><span> + </span></a>
-        </div>
-      </header>
-    </div>
-  );
+  render() {
+    return (<h1>{this.props.helloWorld}</h1>);
+  }
+
 }
 
-export default App;
+const mapStateToProps = state => ({helloWorld: state.helloWorld})
+const mapDispatchToProps = dispatch => bindActionCreators({ requestHelloWorld }, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
