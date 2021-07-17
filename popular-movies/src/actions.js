@@ -1,5 +1,5 @@
-export const REQUEST_HELLO_WORLD = 'REQUEST_HELLO_WORLD'
-export const RECIEVE_HELLO_WORLD = 'RECIEVE_HELLO_WORLD'
+export const REQUEST_API_DATA = "REQUEST_API_DATA";
+export const RECEIVE_API_DATA = "RECEIVE_API_DATA";
 
-export const requestHelloWorld = () => ({type: REQUEST_HELLO_WORLD})
-export const recieveHelloWorld = text => ({type: RECIEVE_HELLO_WORLD, text})
+export const requestApiData = () => ({ type: REQUEST_API_DATA });
+export const receiveApiData = data => ({ type: RECEIVE_API_DATA, data });
