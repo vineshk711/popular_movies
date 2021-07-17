@@ -2,6 +2,7 @@ import React from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './app.css'
 
 import { requestApiData } from "./actions";
 
@@ -16,8 +17,10 @@ class App extends React.Component {
   render() {
     const {results = [] } = this.props.data;
     return results.length
-      ? <div className='container-fluid'>
-          <MovieList results={results}/>
+      ? <div className='container-fluid movie-list'>
+          <div className="row">
+            <MovieList results={results}/>
+          </div>
         </div>
       : <h1>loading...</h1>;
   }
