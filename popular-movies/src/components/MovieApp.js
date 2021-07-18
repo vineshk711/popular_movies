@@ -5,7 +5,6 @@ import AddFavourites from './AddFavourites';
 import RemoveFavourites from './RemoveFavourites';
 import MovieList from './Movielist'
 import NavBar from './NavBar'
-import { addFavourites, removeFavourites } from "../actions";
 
 
 export default function MovieApp(props) {
