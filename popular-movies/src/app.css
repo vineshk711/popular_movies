@@ -1,17 +1,24 @@
 body {
-	background: #141414;
+	background: #202020;
 	color: #ffffff;
-	margin: 5%;
 }
 
 .movie-app > .row {
 	overflow-x: auto;
 	flex-wrap: nowrap;
+	margin: 5%;
+}
+.navbar {
+	background:darkslategray;
 }
 
 .image-container {
 	position: relative;
 	transition: transform 0.2s;
+}
+.image{
+	border: 0px solid white;
+	border-radius: 20px;
 }
 
 .image-container:hover {

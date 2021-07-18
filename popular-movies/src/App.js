@@ -10,6 +10,7 @@ import MovieListHeading from './components/MovieListHeading';
 import AddFavourites from './components/AddFavourites';
 import RemoveFavourites from './components/RemoveFavourites';
 import MovieList from './components/Movielist'
+import NavBar from './components/NavBar'
 
 
 
@@ -24,6 +25,7 @@ class App extends React.Component {
     const {results = [] } = this.props.data;
     return results.length
       ? <div className='container-fluid movie-app'>
+		  <NavBar/>
 			<div className='row d-flex align-items-center mt-4 mb-4'>
 				<MovieListHeading heading='Popular Movies' />
 			</div>
