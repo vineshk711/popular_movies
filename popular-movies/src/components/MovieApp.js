@@ -32,7 +32,7 @@ export default function MovieApp(props) {
 
 	const removeFavouriteMovie = (movie) => {
 		const newFavouriteList = favourites.filter(
-			(favourite) => favourite.imdbID !== movie.imdbID
+			(favourite) => favourite.id !== movie.id
 		);
 
 		setFavourites(newFavouriteList);
@@ -57,11 +57,15 @@ export default function MovieApp(props) {
 				<MovieListHeading heading='Favourites' />
 			</div>
 			<div className='row'>
-				<MovieList
-					results={favourites}
-					handleFavouritesClick={removeFavouriteMovie}
-					favouriteComponent={RemoveFavourites}
-				/>
+				{  favourites.length ?
+					<MovieList
+						results={favourites}
+						handleFavouritesClick={removeFavouriteMovie}
+						favouriteComponent={RemoveFavourites}
+					/>:
+					
+						<h7>Nothing in Favourates. Click on movie poster to add favourates</h7 >
+				}
 			</div>
 		</div>
 	)

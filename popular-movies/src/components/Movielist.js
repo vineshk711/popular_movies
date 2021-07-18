@@ -1,11 +1,7 @@
 import React from 'react'
 
-import {Card,Button} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import AddFavourite from './AddFavourites'
-
-
 const MovieList = (props) => { 
+    const FavouriteComponent = props.favouriteComponent
     return (
         <div className='d-flex  m-3' >
             {props.results.map( (movie, index) => (
@@ -15,11 +11,8 @@ const MovieList = (props) => {
                     onClick={() => props.handleFavouritesClick(movie)}
                     className='overlay d-flex align-items-center justify-content-center'
                 >
-                    <AddFavourite />
+                    <FavouriteComponent/>
                 </div>
-                {/* <div className='d-flex align-items-center justify-content-center'>
-                    <h6>{movie.original_title}</h6>
-                </div> */}
             </div>
             ))}
         </div>
